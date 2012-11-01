@@ -27,6 +27,12 @@ alias gs='git status'
 alias gu='git push' #(g)it (u)p   aka push
 alias gd='git pull' #(g)it (d)own aka pull
 alias gcm='git commit -m'
+    # Git aliases from: http://coderwall.com/p/euwpig 
+    #   In order to use the following aliases this command must be run on the
+    #   terminal in order to setup git aliases
+    #       git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    alias glg ='git lg'     # see commit log with pretty print
+    alias glgp='git lg -p'  # see commit log w/ lines changed
 
 ## Command Prompt Customization ##
 export PS1="\n\w\n@ "
