@@ -36,7 +36,7 @@ colorscheme monokai
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 
 " Window Management
 map <leader>h :wincmd h<CR>
@@ -147,16 +147,12 @@ vmap <Leader>ae :Tabularize /=<CR>
 nmap <Leader>ac :Tabularize /:\zs<CR>
 vmap <Leader>ac :Tabularize /:\zs<CR>
 
-" Clean up the BCE of Vim in tmux
-" found here: http://snk.tuxfamily.org/log/vim-256color-bce.html
-if &term =~ '256color'
-  " Disable Background Color Erase (BCE) so that color schemes
-  " work properly when Vim is used inside tmux and GNU screen.
-  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
 """"""""""""""""
 " Auto complete
 """"""""""""""""
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
