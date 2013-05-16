@@ -18,6 +18,13 @@ alias vi="vim"
 alias vim="/usr/local/Cellar/vim/7.3.762/bin/vim"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias xtags="/usr/local/Cellar/ctags/5.8/bin/ctags"
+alias sshls="egrep 'Host\s' ~/.ssh/config"
+
+function pr() {
+    pid_line=$(pgrep -fl $1);
+    pid=$(awk '{print $1;}');
+    ps -p $pid -o pid,pcpu,pmem,ruser,args;
+}
 
 # Ack #
 alias pack='ack --php' #run ack on php files
