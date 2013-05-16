@@ -15,11 +15,12 @@ alias 3l='lll'
 alias now='date +"%T %d-%m-%Y"'
 alias ll="ls -alhG"
 alias vi="vim"
-alias vim="/usr/local/Cellar/vim/7.3.762/bin/vim"
+alias vim="/usr/local/Cellar/vim/7.3.918/bin/vim"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias xtags="/usr/local/Cellar/ctags/5.8/bin/ctags"
 alias sshls="egrep 'Host\s' ~/.ssh/config"
 
+# Process report
 function pr() {
     pid_line=$(pgrep -fl $1);
     pid=$(awk '{print $1;}');
@@ -175,7 +176,6 @@ POWERLINE_HIDE_HOST_NAME="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.ssh-alias
 
 # Customize to your needs...
 export TERM='xterm-256color'
