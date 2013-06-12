@@ -10,6 +10,7 @@ EDITOR=vim
 ###  Aliases  ###
 alias ..="cd .."
 alias l='ls -alhG'
+alias lj='jobs -l'
 alias lll='clear && ll'
 alias 3l='lll'
 alias now='date +"%T %d-%m-%Y"'
@@ -78,8 +79,8 @@ function twd() {
 #// Functions //////////////////////////////
 #//////////////////////////////////////////
 
-function ff() { find . -iname '*$@*' -type f; }
-function fd() { find . -iname '*$@*' -type d; }
+function ff() { find . -iname "*$@*" -type f; }
+function fd() { find . -iname "*$@*" -type d; }
 
 #////////////////////////////////////////////
 #// ZSH Options ////////////////////////////

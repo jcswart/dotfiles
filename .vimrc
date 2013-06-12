@@ -52,7 +52,6 @@ map _ <C-W>-
 "taller window
 map = <C-W>+
 
-
 " Amazing ass window swapping from:
 " http://stackoverflow.com/questions/2586984/how-can-i-swap-positions-of-two-open-files-in-splits-in-vim
 function! MarkWindowSwap()
@@ -87,8 +86,8 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 map <leader>bl :buffers!<CR>
-map <leader>nh :new<CR>
-map <leader>nv :vnew<CR>
+map <leader>hn :new<CR>
+map <leader>vn :vnew<CR>
 
 " Quick save
 map <leader>w :w!<CR>
@@ -132,8 +131,10 @@ endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" PHP Linting- run current file thorough php syntax checker
-nnoremap <leader>pp :!php -l %<CR>
+" PHP Linting - run current file thorough php syntax checker
+nnoremap <leader>pp :!php -l %<CR> 
+" PHP Run - run current file
+nnoremap <leader>pr :!php %
 
 " Sync - I create a sync.sh in the root folder of each project. This file
 " contains the rsync command to push to the dev server. This command, file
