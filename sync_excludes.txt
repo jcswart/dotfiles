@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+system/cms/config
+.htaccess
+sync_excludes.txt
+*.sw?
+*.*.sw?
+sync.sh
+*.vim
+
