@@ -7,26 +7,20 @@ EDITOR=vim
 #// Aliases ////////////////////////////////
 #//////////////////////////////////////////
 
-###  Aliases  ###
 alias ..="cd .."
 alias l='ls -alhG'
-alias lj='jobs -l'
 alias lll='clear && ll'
 alias 3l='lll'
 alias now='date +"%T %d-%m-%Y"'
 alias ll="ls -alhG"
-alias vi="vim"
-alias vim="/usr/local/Cellar/vim/7.3.918/bin/vim"
+alias vim="/usr/local/Cellar/vim/7.3.976/bin/vim"
+alias v="vim"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias xtags="/usr/local/Cellar/ctags/5.8/bin/ctags"
-alias sshls="egrep 'Host\s' ~/.ssh/config"
 
-# Process report
-function pr() {
-    pid_line=$(pgrep -fl $1);
-    pid=$(awk '{print $1;}');
-    ps -p $pid -o pid,pcpu,pmem,ruser,args;
-}
+# Sync #
+alias sync="./sync.sh"       # ~/dev/dotfiles/sync.sh
+alias syncl="./sync.sh live"
 
 # Ack #
 alias pack='ack --php' #run ack on php files
@@ -45,8 +39,9 @@ alias ssh_rmvm_back='ssh root@66.228.57.5'
 alias sshdvds='ssh root@74.207.228.147'
 
 # PHP #
-alias composer='php /Users/jswart/composer.phar'
+alias composer='/usr/local/bin/composer.phar'
 alias ssm='php /Users/jswart/Dropbox/Code/SimpleSSH_Manager/ssm.php'
+alias php=php54
 
 # Curl as googlebot #
 alias curlbot='curl -A "Googlebot/2.1 (+http://www.googlebot.com/bot.html)"'
@@ -74,13 +69,13 @@ alias twl='task all'
 function twd() {
     task $1 done
 }
+
 #////////////////////////////////////////////
-#
 #// Functions //////////////////////////////
 #//////////////////////////////////////////
 
-function ff() { find . -iname "*$@*" -type f; }
-function fd() { find . -iname "*$@*" -type d; }
+function ff() { find . -iname '*$@*' -type f; }
+function fd() { find . -iname '*$@*' -type d; }
 
 #////////////////////////////////////////////
 #// ZSH Options ////////////////////////////
@@ -174,10 +169,14 @@ POWERLINE_HIDE_HOST_NAME="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git, taskwarrior)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.ssh-alias
 
 # Customize to your needs...
 export TERM='xterm-256color'
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/opt/X11/bin
+export PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/opt/X11/bin:$PATH
+
+export GOPATH=/Users/swarthy/dev/go
+PATH=$PATH:$GOPATH/bin
