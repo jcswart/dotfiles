@@ -30,7 +30,7 @@ nnoremap <leader>nb <C-t>
 imap jj <Esc>
 
 " Colorscheme
-colorscheme jellybean
+colorscheme jellybeans
 
 " Tab settings: tabs are 4 spaces, use tabs
 set tabstop=4
@@ -132,9 +132,9 @@ endfun
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " PHP Linting - run current file thorough php syntax checker
-nnoremap <leader>pp :!php -l %<CR> 
+nnoremap <leader>pp :!php -l %<CR>
 " PHP Run - run current file
-nnoremap <leader>pr :!php %
+nnoremap <leader>pr :!php %<CR>
 
 " Go fmt
 nnoremap <leader>gf :!go fmt %<CR>
