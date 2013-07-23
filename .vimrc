@@ -3,7 +3,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-let mapleader = " " " Set ',' as the leader instad of default '\'
+let mapleader = " " " Set [:space:] as the leader instad of default '\'
 set number          " Line numbers on
 
 " Allow backspace to operate as you would expect
@@ -30,7 +30,7 @@ nnoremap <leader>nb <C-t>
 imap jj <Esc>
 
 " Colorscheme
-colorscheme Jellybean 
+colorscheme jellybeans
 
 " Tab settings: tabs are 4 spaces, use tabs
 set tabstop=4
@@ -53,7 +53,12 @@ map _ <C-W>-
 map = <C-W>+
 
 " Amazing ass window swapping from:
-" http://stackoverflow.com/questions/2586984/how-can-i-swap-positions-of-two-open-files-in-splits-in-vim
+"    http://stackoverflow.com/questions/2586984/how-can-i-swap-positions-of-two-open-files-in-splits-in-vim
+"    To use (assuming your mapleader is set to \) you would:
+"        1. Move to the window to mark for the swap via ctrl-w movement
+"        2. Type \mw
+"        3. Move to the window you want to swap
+"        4. Type \pw
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
 endfunction
@@ -75,16 +80,11 @@ endfunction
 
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
-"    To use (assuming your mapleader is set to \) you would:
-"    Move to the window to mark for the swap via ctrl-w movement
-"    Type \mw
-"    Move to the window you want to swap
-"    Type \pw
 
 " Buffer hot-keys
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
-map <leader>bl :buffers!<CR>
+map <leader>ls :buffers!<CR>
 map <leader>hn :new<CR>
 map <leader>vn :vnew<CR>
 
@@ -135,9 +135,14 @@ nnoremap <leader>pp :!php -l %<CR>
 " PHP Run - run current file
 nnoremap <leader>pr :!php %<CR>
 
+" Go fmt
+nnoremap <leader>gf :!go fmt %<CR>
+" Go run
+nnoremap <leader>gr :!go run %<CR>
+
 " Sync - I create a sync.sh in the root folder of each project. This file
-" contains the rsync command to push to the dev server. This command, file
-" and the cooresponding ssh key\config allow simply remote syncing. Also
+" contains the rsync command to push to the dev server. This file
+" and the cooresponding ssh key\config allow simple remote syncing. Also
 " a file named sync-excludes.txt is read by sync.sh
 nnoremap <leader>ss :!./sync.sh<CR>
 
@@ -170,5 +175,5 @@ set foldlevel=2
 """"""""""""""""
 
 " Allow YouCompleteMe plugin to read tag files
-let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
