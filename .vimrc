@@ -81,7 +81,6 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 "    Move to the window you want to swap
 "    Type \pw
 
-
 " Buffer hot-keys
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
@@ -132,9 +131,9 @@ endfun
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " PHP Linting - run current file thorough php syntax checker
-nnoremap <leader>pp :!php -l %<CR> 
+nnoremap <leader>pp :!php -l %<CR>
 " PHP Run - run current file
-nnoremap <leader>pr :!php %
+nnoremap <leader>pr :!php %<CR>
 
 " Sync - I create a sync.sh in the root folder of each project. This file
 " contains the rsync command to push to the dev server. This command, file
@@ -145,6 +144,8 @@ nnoremap <leader>ss :!./sync.sh<CR>
 " Tabularize plugin
 nmap <Leader>ae :Tabularize /=<CR>
 vmap <Leader>ae :Tabularize /=<CR>
+nmap <Leader>ah :Tabularize /=><CR>
+vmap <Leader>ah :Tabularize /=><CR>
 nmap <Leader>ac :Tabularize /:\zs<CR>
 vmap <Leader>ac :Tabularize /:\zs<CR>
 
@@ -162,7 +163,7 @@ endif
 set foldmethod=indent "fold based on indent
 set foldnestmax=10    "deepest fold is 10 levels
 set nofoldenable      "don't fold by default
-set foldlevel=1
+set foldlevel=2
 
 """"""""""""""""
 " Auto complete
