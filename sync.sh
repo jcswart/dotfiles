@@ -24,7 +24,7 @@ if [ -n "$1" ] && [ $1 == 'live' ]; then
 		# remote to local
 		rsync -az --progress --size-only --exclude-from $EXCLUDE_FILE $SSH_ID:$REMOTE_DIR $HOME_DIR
 	elif [ -n "$2" ] && [ $2 == 'up' ]; then
-		echo '[live] live files up ...'
+		echo '[live] files up ...'
 		rsync -az --progress --size-only --exclude-from $EXCLUDE_FILE $HOME_DIR $SSH_ID:$REMOTE_DIR
 	fi
 else
