@@ -81,7 +81,6 @@ endfunction
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
-
 " Buffer hot-keys
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
@@ -150,6 +149,8 @@ nnoremap <leader>ss :!./sync.sh<CR>
 " Tabularize plugin
 nmap <Leader>ae :Tabularize /=<CR>
 vmap <Leader>ae :Tabularize /=<CR>
+nmap <Leader>ah :Tabularize /=><CR>
+vmap <Leader>ah :Tabularize /=><CR>
 nmap <Leader>ac :Tabularize /:\zs<CR>
 vmap <Leader>ac :Tabularize /:\zs<CR>
 
@@ -167,7 +168,7 @@ endif
 set foldmethod=indent "fold based on indent
 set foldnestmax=10    "deepest fold is 10 levels
 set nofoldenable      "don't fold by default
-set foldlevel=1
+set foldlevel=2
 
 """"""""""""""""
 " Auto complete
