@@ -52,6 +52,9 @@ alias jdev='cd ~/dev/ && ll'
 alias datetime='date +"%F %T"'
 alias memtop10='ps aux | head -1 && ps aux | sort -k 4 -nr | head' # display top10 most memory intense processes, source: http://rubytune.com/cheat
 alias find_unique='awk "NR==FNR{a[$0];next}!($0 in a)" $1 $2' # This is brilliant. $1 is file with all entries. $2 is file with used entries. Output == items in $1 not in $2.
+function file_slice() {
+	sed -n "$1,$2p" $3
+}
 
 # Git #
 alias gs='git status'
