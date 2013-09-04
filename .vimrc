@@ -153,6 +153,14 @@ nmap <Leader>ah :Tabularize /=><CR>
 vmap <Leader>ah :Tabularize /=><CR>
 nmap <Leader>ac :Tabularize /:\zs<CR>
 vmap <Leader>ac :Tabularize /:\zs<CR>
+nmap <Leader>aq :Tabularize /?<CR>
+vmap <Leader>aq :Tabularize /?<CR>
+nmap <Leader>ap :Tabularize /\|<CR>
+vmap <Leader>ap :Tabularize /\|<CR>
+
+" Insert hash-rocket and arrow
+nnoremap <D-i><D-h> <Space>=><Space>
+nnoremap <D-i><D-a> <Space>-><Space>
 
 " Clean up the BCE of Vim in tmux
 " found here: http://snk.tuxfamily.org/log/vim-256color-bce.html
