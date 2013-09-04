@@ -5,10 +5,10 @@
 
 set -e
 
-HOME_DIR='/Users/jswart/dev/dtk-link-app/' # The root directory of the files you want to upload
-REMOTE_DIR='/var/www/html/la/'             # The remote root directory to upload to
-EXCLUDE_FILE='./sync_excludes.txt'         # The file containing bash style excludes patterns
-SSH_ID='dtk-link-app'                      # The ssh identity file that will be used
+HOME_DIR='/path/to/root/project'                # The root directory of the files you want to upload
+REMOTE_DIR='/var/www/html/'                     # The remote root directory to upload to
+EXCLUDE_FILE='./sync_excludes.txt'              # The file containing bash style excludes patterns
+SSH_ID='ssh-config-entry OR example@server.com' # The ssh identity file that will be used
 CURR_DIR=$(pwd)'/'
 
 if [ $HOME_DIR != $CURR_DIR ]; then 
