@@ -12,7 +12,7 @@ endif
 set t_Co=256
 let g:colors_name = "codeisdata"
 
-hi IncSearch guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi IncSearch guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=5 ctermbg=234 cterm=NONE
 hi WildMenu guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SignColumn guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SpecialComment guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
@@ -37,7 +37,7 @@ hi Conditional guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 c
 hi StorageClass guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Todo guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Special guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi LineNr guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi LineNr guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=232 ctermbg=256 cterm=NONE
 hi StatusLine guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=234 ctermbg=256 cterm=NONE
 hi Normal guifg=#ffffff guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=256 cterm=NONE
 hi Label guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
