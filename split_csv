@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# check if an input filename was passed as a command line argument:
+
+if [ ! $# == 1 ]; then  echo "Please specify the name of a file to split!"  exit
+
+fi
+
+cd csvs
+
+if [ ! -f $1 ]; then pwd exit
+
+fi
+
+# create a directory to store the output:
+# mkdir output
+
+# create a temporary file containing the header without
+# the content:
+head -n 1 $1 > header.csv
+echo "made content"
+
+# create a temporary file containing the content without
+# the header:
+tail -n +2 $1 > content.csv
+echo "made header"
+
+# split the content file into multiple files of 5 lines each:
+NOW=$(date +"%Y_%m_%d_%H_%M_%S_")
+split -l 1000 content.csv "batches/data_$NOW"
+echo "split"
+
+# loop through the new split files, adding the header# and a '.csv' extension:
+for f in batches/*; do cat header.csv $f > $f.csv; rm $f; done;
+echo "looped"
+
+# make the batches accessable
+chmod -R 777 batches/*.csv
+echo "permissions"
+
+# remove the temporary files:
+rm header.csv
+rm content.csv
+echo "cleanup"
