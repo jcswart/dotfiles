@@ -9,8 +9,8 @@ set number          " Line numbers on
 " Allow backspace to operate as you would expect
 set bs=indent,eol,start
 
-" Display trailing whitespace
-set list
+" Display trailing whitespace (off by default)
+set nolist
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Searching
@@ -30,7 +30,7 @@ nnoremap <leader>nb <C-t>
 imap jj <Esc>
 
 " Colorscheme
-colorscheme jellybeans
+colorscheme codeisdata
 
 " Tab settings: tabs are 4 spaces, use tabs
 set tabstop=4
