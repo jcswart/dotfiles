@@ -9,10 +9,12 @@ if version > 580
 	endif
 endif
 
+au FileType php match Conditional /\<foreach\>/ "syntax doesn't identify PHP foreach by default
+
 set t_Co=256
 let g:colors_name = "codeisdata"
 
-hi IncSearch guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=5 ctermbg=234 cterm=NONE
+hi IncSearch guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=5 ctermbg=235 cterm=NONE
 hi WildMenu guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SignColumn guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SpecialComment guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
@@ -33,29 +35,29 @@ hi Debug guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=N
 hi PMenuSbar guifg=NONE guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=102 cterm=NONE
 hi Identifier guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=2 ctermbg=NONE cterm=NONE
 hi SpecialChar guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Conditional guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi Conditional guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=34 ctermbg=256 cterm=bold
 hi StorageClass guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Todo guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi Todo guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=238 ctermbg=256 cterm=NONE
 hi Special guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi LineNr guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=232 ctermbg=256 cterm=NONE
-hi StatusLine guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=234 ctermbg=256 cterm=NONE
+hi LineNr guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=235 ctermbg=256 cterm=NONE
+hi StatusLine guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=235 ctermbg=256 cterm=NONE
 hi Normal guifg=#ffffff guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=256 cterm=NONE
 hi Label guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi CTagsImport guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi PMenuSel guifg=#ffffff guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=246 cterm=NONE
-hi Search guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=4 ctermbg=234 cterm=NONE
+hi Search guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=4 ctermbg=235 cterm=NONE
 hi CTagsGlobalVariable guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Delimiter guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Statement guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi Statement guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=34 ctermbg=256 cterm=bold
 hi SpellRare guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi EnumerationValue guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Comment guifg=#757575 guibg=NONE guisp=NONE gui=NONE ctermfg=233 ctermbg=NONE cterm=NONE
+hi Comment guifg=#757575 guibg=NONE guisp=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
 hi Character guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Float guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Number guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Boolean guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Operator guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi CursorLine guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=234 cterm=NONE
+hi CursorLine guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=235 cterm=NONE
 hi Union guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi TabLineFill guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Question guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
@@ -67,14 +69,14 @@ hi CursorColumn guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=230 
 hi Define guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Function guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=2 ctermbg=NONE cterm=NONE
 hi FoldColumn guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi PreProc guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi PreProc guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=bold
 hi EnumerationName guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Visual guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=3 ctermbg=234 cterm=NONE
+hi Visual guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=3 ctermbg=235 cterm=NONE
 hi MoreMsg guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SpellCap guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi VertSplit guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Exception guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Keyword guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi Keyword guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=underline
 hi Type guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi DiffChange guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Cursor guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=255 ctermbg=256 cterm=NONE
@@ -84,10 +86,10 @@ hi PMenu guifg=#ffffff guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=24
 hi SpecialKey guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Constant guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi DefinedName guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
-hi Tag guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi Tag guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=underline
 hi String guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi PMenuThumb guifg=NONE guibg=#ffffff guisp=#ffffff gui=NONE ctermfg=2 ctermbg=248 cterm=NONE
-hi MatchParen guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
+hi MatchParen guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=1 ctermbg=256 cterm=NONE
 hi LocalVariable guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi Repeat guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
 hi SpellBad guifg=#ffffff guibg=#ffffff guisp=#ffffff ctermfg=2 ctermbg=256 cterm=NONE
