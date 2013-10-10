@@ -1,0 +1,27 @@
+# Global
+alias l='ls -oahG'
+alias off='sudo poweroff'
+alias lt='/home/swarthy/LightTable/LightTable'
+
+# apt
+alias sagi='sudo apt-get install'
+
+# sync.sh script
+alias slu='./sync.sh live up'
+alias sru='./sync.sh up'
+
+# Ack 
+alias ack-find-phpdebug='ack "var_dump|die;|\sdd\(.*\);"'
+
+# Git
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gl='git log'
+alias lock="i3lock -c 000000"
+
+# Set laptop screen brightness
+# ex: bn 50
+function bn {
+	xbacklight -set $1
+}
