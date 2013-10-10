@@ -1,5 +1,16 @@
-" Pathogen settings
-call pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" Vundle
+Bundle 'gmarik/vundle'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'godlygeek/tabular'
+Bundle 'greyblake/vim-preview'
+
+
 syntax on
 filetype plugin indent on
 
@@ -30,7 +41,7 @@ nnoremap <leader>nb <C-t>
 imap jj <Esc>
 
 " Colorscheme
-colorscheme codeisdata
+colorscheme jellybeans
 
 " Tab settings: tabs are 4 spaces, use tabs
 set tabstop=4
