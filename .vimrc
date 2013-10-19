@@ -9,7 +9,8 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'godlygeek/tabular'
 Bundle 'greyblake/vim-preview'
-
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'digitaltoad/vim-jade'
 
 syntax on
 filetype plugin indent on
@@ -145,6 +146,9 @@ autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <
 nnoremap <leader>pp :!php -l %<CR>
 " PHP Run - run current file
 nnoremap <leader>pr :!php %<CR>
+
+" Run - run current node file
+nnoremap <leader>nr :!node %<CR>
 
 " Go fmt
 nnoremap <leader>gf :!go fmt %<CR>
