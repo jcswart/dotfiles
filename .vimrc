@@ -200,3 +200,6 @@ set foldlevel=2
 " Allow YouCompleteMe plugin to read tag files
 let g:ycm_collect_identifiers_from_tags_files = 1
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" File type defaults
+au BufNewFile,BufRead *.md set filetype=markdown

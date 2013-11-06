@@ -3,6 +3,7 @@ alias l='ls -oahG'
 alias off='sudo poweroff'
 alias lt='/home/swarthy/LightTable/LightTable'
 alias dev='cd ~/dev'
+alias blog='cd ~/dev/ruby/my-blog'
 
 # apt
 alias sagi='sudo apt-get install'
@@ -27,4 +28,15 @@ function bn {
 	xbacklight -set $1
 }
 
+# Clojure
+#
 
+# Coffee-script
+alias csc='coffee -b -c'
+
+# Minecraft
+alias mc='/home/swarthy/Desktop/TechnicLauncher.jar'
+
+# Dropbox Daemon
+# This launches the daemon so files will sync
+alias dropbox='./home/swarthy/.dropbox-dist/dropboxd'

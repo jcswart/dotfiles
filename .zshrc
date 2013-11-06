@@ -15,7 +15,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/opt/X11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/Users/swarthy/dev/go/bin:~/bin:~/racket/bin
+export PATH=$PATH:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/opt/X11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/bin:~/racket/bin
 
 
 ######
@@ -25,12 +25,17 @@ export PATH=$PATH:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/bin:/bi
 #
 
 # Load key re-mapping
-xmodmap ~/.xmodmap-swarthy-MacBookAir
+xmodmap ~/.xmodmap-`uname -n`
+
 # Load alias commands
 source ~/.cli-aliases
+
 # Set consule emulation reporting. xfce4-terminal is 256 colors by default, but
 # TERM is 'xterm' so you only see 8
 TERM=xterm-256color
 
 # Disable touchpad while typing
 #syndaemon -d -t -i 1
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
