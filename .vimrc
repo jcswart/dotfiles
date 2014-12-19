@@ -1,22 +1,32 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin() 
 
 " Vundle
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'godlygeek/tabular'
 Bundle 'greyblake/vim-preview'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'xsbeats/vim-blade'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'mattn/emmet-vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 syntax on
 filetype plugin indent on
+set noswapfile "no swap files
 
 let mapleader = " " " Set [:space:] as the leader instad of default '\'
 set number          " Line numbers on
+set nowrap          " No line wrapping by default
 
 " Allow backspace to operate as you would expect
 set bs=indent,eol,start
@@ -42,6 +52,7 @@ nnoremap <leader>nb <C-t>
 imap jj <Esc>
 
 " Colorscheme
+"colorscheme jellybeans
 colorscheme jellybeans
 
 " Tab settings: tabs are 4 spaces, use tabs
@@ -141,11 +152,15 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " PHP Linting - run current file thorough php syntax checker
 nnoremap <leader>pp :!php -l %<CR>
 " PHP Run - run current file
 nnoremap <leader>pr :!php %<CR>
+
+" Ruby Run - run current file
+nnoremap <leader>rr :!ruby %<CR>
 
 " Run - run current node file
 nnoremap <leader>nr :!node %<CR>
@@ -165,41 +180,12 @@ nnoremap <leader>ss :!./sync.sh<CR>
 nmap <Leader>ae :Tabularize /=<CR>
 vmap <Leader>ae :Tabularize /=<CR>
 nmap <Leader>ah :Tabularize /=><CR>
-vmap <Leader>ah :Tabularize /=><CR>
-nmap <Leader>ac :Tabularize /:\zs<CR>
-vmap <Leader>ac :Tabularize /:\zs<CR>
-nmap <Leader>aq :Tabularize /?<CR>
-vmap <Leader>aq :Tabularize /?<CR>
-nmap <Leader>ap :Tabularize /\|<CR>
-vmap <Leader>ap :Tabularize /\|<CR>
 
-" Insert hash-rocket and arrow
-nnoremap <D-i><D-h> <Space>=><Space>
-nnoremap <D-i><D-a> <Space>-><Space>
+" Clojure eval
+nnoremap <leader>ce :%Eval<CR>
+nnoremap <leader>cr :%Require!<CR>
 
-" Clean up the BCE of Vim in tmux
-" found here: http://snk.tuxfamily.org/log/vim-256color-bce.html
-if &term =~ '256color'
-  " Disable Background Color Erase (BCE) so that color schemes
-  " work properly when Vim is used inside tmux and GNU screen.
-  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
 
-" Code folding
-" found: http://smartic.us/2009/04/06/code-folding-in-vim/
-set foldmethod=indent "fold based on indent
-set foldnestmax=10    "deepest fold is 10 levels
-set nofoldenable      "don't fold by default
-set foldlevel=2
+:nnoremap <silent> <leader>b :CommandTMRU<CR>
 
-""""""""""""""""
-" Auto complete
-""""""""""""""""
 
-" Allow YouCompleteMe plugin to read tag files
-let g:ycm_collect_identifiers_from_tags_files = 1
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-" File type defaults
-au BufNewFile,BufRead *.md set filetype=markdown
